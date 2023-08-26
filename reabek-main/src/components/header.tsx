@@ -21,7 +21,7 @@ export default async function Header({ location }: { location: page_loc}) {
     for (let type in ["png","jpg","jpeg","svg"]) {
       await supabase.from("users").select().eq("id", user.id).single().then(response => {
         if (response.error) {
-          userResponse = <span>Database Error | Try reloading the Page</span>
+          userResponse = <span>Database Error<span className="text-zinc-400"> - </span>Try reloading the Page</span>
         }
         if (response.data) {
           uId = response.data.userId
@@ -46,8 +46,8 @@ export default async function Header({ location }: { location: page_loc}) {
         <Image className="flex rounded-full border-2 border-white border-solid" alt="Reabek Icon" src={favicon} width={30} height={30}/>
         <h1 className="text-xl">Reabek</h1>
       </div>
-      <nav className="flex items-center">
-        <Link className={location == page_loc.Home ? "flex border-b-3 border-solid border-white" : ""} href="/Home">Home</Link> | <Link className={location == page_loc.Profiles ? "flex border-solid border-b-3 border-white" : ""} href="/Users">Users</Link> | <Link className={location == page_loc.Contact ? "flex border-b-3 border-solid border-white" : ""} href="/Contact">Contact</Link>
+      <nav className="flex rounded-full border-2 border-solid border-white py-2 px-5 items-center">
+        <Link className={location == page_loc.Home ? "flex border-b-3 border-solid border-white" : ""} href="/Home">Home</Link><span className="text-zinc-400"> - </span><Link className={location == page_loc.Profiles ? "flex border-solid border-b-3 border-white" : ""} href="/Users">Users</Link><span className="text-zinc-400"> - </span><Link className={location == page_loc.Contact ? "flex border-b-3 border-solid border-white" : ""} href="/Contact">Contact</Link>
       </nav>
     </div>
     {user ? (  userResponse  ) : (  <Link href="/login">Sign In</Link>  )}
