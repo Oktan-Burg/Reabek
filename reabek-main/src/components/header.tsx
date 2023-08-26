@@ -1,8 +1,9 @@
 export const dynamic = 'force-dynamic'
 import Image from "next/image"
-import favicon from "@/assets/favicon.svg"
-import { createRouteHandlerClient } from "@supabase/auth-helpers-nextjs"
+import favicon from "@/assets/favicon.svg" 
+import { User, createRouteHandlerClient } from "@supabase/auth-helpers-nextjs"
 import { cookies } from "next/headers"
+import { User } from "@supabase/auth-helpers-nextjs"
 import Link from "next/link"
 export enum page_loc {
   Home,
@@ -41,15 +42,15 @@ export default async function Header({ location }: { location: page_loc}) {
     }
   }
   return <div className="flex w-screen py-5 px-10 items-center justify-between">
-    <div className="flex items-center">
+    <div className="flex w-full items-center justify-between">
       <div className="flex items-center">
         <Image className="flex rounded-full border-2 border-white border-solid" alt="Reabek Icon" src={favicon} width={25} height={25}/>
         <h1>Reabek</h1>
       </div>
       <nav className="flex items-center">
-        <Link className={location == page_loc.Home ? "flex border-b-3 border-solid border-white" : ""} href="/Home">Home</Link> | <Link className={location == page_loc.Profile ? "flex border-solid border-b-3 border-white" : ""} href="/Users">Users</Link> | <Link className={location == page_loc.Contact ? "flex border-b-3 border-solid border-white" : ""} href="/Contact">Contact</Link>
+        <Link className={location == page_loc.Home ? "flex border-b-3 border-solid border-white" : ""} href="/Home">Home</Link> | <Link className={location == page_loc.Profiles ? "flex border-solid border-b-3 border-white" : ""} href="/Users">Users</Link> | <Link className={location == page_loc.Contact ? "flex border-b-3 border-solid border-white" : ""} href="/Contact">Contact</Link>
       </nav>
     </div>
-    {user ? userResponse : <Link href="/login">Sign In</Link>}
+    {user ? (  userResponse  ) : (  <Link href="/login">Sign In</Link>  )}
   </div>
 }

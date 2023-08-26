@@ -10,7 +10,9 @@ export default function Home() {
   return (
     <React.Fragment>
       <Header location={page_loc.Home}/>
-      
+      <div>
+        
+      </div>
     </React.Fragment>
   )
 }
