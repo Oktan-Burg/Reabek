@@ -41,8 +41,8 @@ export default async function Header({ location }: { location: page_loc}) {
     }
   }
   return <div className="flex w-screen py-5 px-10 items-center justify-between">
-    <div className="flex w-[50rem] items-center justify-between">
-      <div className="flex items-center">
+    <div className="flex items-center justify-between">
+      <div className="flex items-center mr-[20px]">
         <Image className="flex rounded-full border-2 border-white border-solid" alt="Reabek Icon" src={favicon} width={30} height={30}/>
         <h1 className="text-xl">Reabek</h1>
       </div>
