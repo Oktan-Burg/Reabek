@@ -41,10 +41,10 @@ export default async function Header({ location }: { location: page_loc}) {
     }
   }
   return <div className="flex w-screen py-5 px-10 items-center justify-between">
-    <div className="flex w-full items-center justify-between">
+    <div className="flex w-[50rem] items-center justify-between">
       <div className="flex items-center">
-        <Image className="flex rounded-full border-2 border-white border-solid" alt="Reabek Icon" src={favicon} width={25} height={25}/>
-        <h1>Reabek</h1>
+        <Image className="flex rounded-full border-2 border-white border-solid" alt="Reabek Icon" src={favicon} width={30} height={30}/>
+        <h1 className="text-xl">Reabek</h1>
       </div>
       <nav className="flex items-center">
         <Link className={location == page_loc.Home ? "flex border-b-3 border-solid border-white" : ""} href="/Home">Home</Link> | <Link className={location == page_loc.Profiles ? "flex border-solid border-b-3 border-white" : ""} href="/Users">Users</Link> | <Link className={location == page_loc.Contact ? "flex border-b-3 border-solid border-white" : ""} href="/Contact">Contact</Link>
