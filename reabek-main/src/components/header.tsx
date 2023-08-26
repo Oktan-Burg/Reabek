@@ -3,7 +3,6 @@ import Image from "next/image"
 import favicon from "@/assets/favicon.svg" 
 import { User, createRouteHandlerClient } from "@supabase/auth-helpers-nextjs"
 import { cookies } from "next/headers"
-import { User } from "@supabase/auth-helpers-nextjs"
 import Link from "next/link"
 export enum page_loc {
   Home,
