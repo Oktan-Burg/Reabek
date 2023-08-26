@@ -47,7 +47,7 @@ export default async function Header({ location }: { location: page_loc}) {
         <h1 className="text-xl">Reabek</h1>
       </div>
       <nav className="flex rounded-full border-2 border-solid border-white py-2 px-5 items-center">
-        <Link className={location == page_loc.Home ? "flex border-b-3 border-solid border-white" : ""} href="/Home">Home</Link><span className="text-zinc-400"> - </span><Link className={location == page_loc.Profiles ? "flex border-solid border-b-3 border-white" : ""} href="/Users">Users</Link><span className="text-zinc-400"> - </span><Link className={location == page_loc.Contact ? "flex border-b-3 border-solid border-white" : ""} href="/Contact">Contact</Link>
+        <Link className="hover: text-green-500" href="/Home">Home</Link><span className="text-zinc-400"> - </span><Link className="hover: text-green-500" href="/Users">Users</Link><span className="text-zinc-400"> - </span><Link className="hover: text-green-500" href="/Contact">Contact</Link>
       </nav>
     </div>
     {user ? (  userResponse  ) : (  <Link href="/login">Sign In</Link>  )}
